@@ -1,0 +1,37 @@
+/* 
+  Prose.strings
+  PlaygroundBook
+
+  Created by Burak Üstün on 14.05.2019.
+  
+*/
+
+
+/* An intro to loops. */
+"Chapter1Page1_Connection"="### Bağlantı
+İpad’ini Twin modülüne bağlamak için ilk olarak aşağıdaki adımları izleyelim:
+1. İpad’inin Bluetoothunu açalım.
+2. Kodlama modülünü güce takalım.
+3. Twine Bağlan butonuna basalım.
+
+![Connection](connection.png)
+
+### Kodlar
+1. [openLed(left:, middle:, right:)](glossary://openLed) komutunu twin yazılım modülü üzerindeki ledi yakmak için kullanacağız.
+";
+
+"Chapter1Page2_DCMotor"="### Ne Yapacağız?
+DC Motorları aracın hızını ve yönünü belirlemek için programlayacağız.
+
+### Birleştir
+
+![DCMotor](dcMotor.png)
+
+### Komutlar
+1. [dcMotor (pin6:pin10)](glossary://dcMotor) komutunu motorların hızlarını kontrol etmek için kullanacağız.
+2. [wait(_:)](glossary://wait) komutunu bir sonraki komuta geçmeden önce twini bekletmek için kullanacağız.
+3. [stop()](glossary://stop) komutunu motorları durdurmak için kullanacağız.
+
+### Programla
+Aracın 6 sn sola dönmesini ve durmasını istiyoruz.
+";

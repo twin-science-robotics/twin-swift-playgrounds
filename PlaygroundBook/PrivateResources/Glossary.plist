@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Terms</key>
+	<dict>
+		<key>openLed</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>Title</key>
+				<string>Giriş</string>
+				<key>PageReference</key>
+				<string>Chapter1.playgroundchapter/PlaygroundPage.playgroundpage</string>
+			</dict>
+			<key>Definition</key>
+			<string>Verilen renk koduna göre twin yazılım modülü üzerindeki ledleri yakar.</string>
+			<key>Title</key>
+			<string>openLed(left:, middle, right:)</string>
+		</dict>
+		<key>stop</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>Title</key>
+				<string>DC Motor</string>
+				<key>PageReference</key>
+				<string>Chapter1.playgroundchapter/DCMotor.playgroundpage</string>
+			</dict>
+			<key>Definition</key>
+			<string>Twin üzerindeki motorları durdurur</string>
+			<key>Title</key>
+			<string>stop()</string>
+		</dict>
+		<key>wait</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>Title</key>
+				<string>DC Motor</string>
+				<key>PageReference</key>
+				<string>Chapter1.playgroundchapter/DCMotor.playgroundpage</string>
+			</dict>
+			<key>Definition</key>
+			<string>Twini verilen süre kadar bekletir</string>
+			<key>Title</key>
+			<string>wait(_:)</string>
+		</dict>
+		<key>dcMotor</key>
+		<dict>
+			<key>FirstUse</key>
+			<dict>
+				<key>Title</key>
+				<string>DC Motor</string>
+				<key>PageReference</key>
+				<string>Chapter1.playgroundchapter/DCMotor.playgroundpage</string>
+			</dict>
+			<key>Definition</key>
+			<string>Verilen değerlere göre d6 ve d10 pinlerine güç verir.</string>
+			<key>Title</key>
+			<string>dcMotor(pin6:, pin10:)</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
