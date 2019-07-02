@@ -1,10 +1,3 @@
-//#-hidden-code
-//
-//  See LICENSE folder for this template’s licensing information.
-//
-//  Abstract:
-//  The Swift file containing the source code edited by the user of this playground book.
-//
 import PlaygroundSupport
 import UIKit
 
@@ -12,44 +5,41 @@ let page = PlaygroundPage.current
 page.needsIndefiniteExecution = true
 
 func send(_ text: String) {
-  if let proxy = page.liveView as? PlaygroundRemoteLiveViewProxy {
-    let message: PlaygroundValue = .string(text)
-    proxy.send(message)
-  }
+    if let proxy = page.liveView as? PlaygroundRemoteLiveViewProxy {
+        let message: PlaygroundValue = .string(text)
+        proxy.send(message)
+    }
 }
 
-func scale(input: Int) -> Float {
-  return Float(input * 255 / 100)
+class pin{
+    var pinNumber = 0
+    var pinAnalogValue = 0.0
+    var pinDigitalValue = false
 }
 
-func wait(_ duration: Float) {
-  let result = UInt32(duration * 1000000)
-  usleep(result)
+func setValue(pinGiven: pin, value: Double){
+    pinGiven.pinAnalogValue = value
+    let hexValue = String(format:"%02X", Int(pinGiven.pinAnalogValue))
+    let hexPin = String(format:"%02X", Int(pinGiven.pinNumber))
+    let message = ("AA-44-1C-03-02-"+hexPin+"-"+hexValue)
+    send(message)
 }
 
-func stop() {
-  dcMotor(pin6:0, pin10:0)
+func getDigital(pinGiven: pin) -> Bool {
+    return pinGiven.pinDigitalValue
 }
 
-func dcMotor(pin6:Int, pin10:Int) {
-  var d6Velocity = pin6
-  var d10Velocity = pin10
-  if d6Velocity > 100 {
-    d6Velocity = 100
-  }
-  if d10Velocity > 100 {
-    d10Velocity = 100
-  }
-  d10Velocity = lroundf(scale(input: d10Velocity))
-  d6Velocity = lroundf(scale(input: d6Velocity))
-  
-  send([baseMessage, "06", String(format: "%02lX",d6Velocity)].joined(separator: "-"))
-  send([baseMessage, "0A", String(format: "%02lX",d10Velocity)].joined(separator: "-"))
+func getAnalog(pinGiven: pin) -> Double {
+    return pinGiven.pinAnalogValue
 }
-
-//#-end-hidden-code
-//:#localized(key: "Chapter1Page2_DCMotor")
+var pin6 = pin()
+pin6.pinNumber = 6
+var pin9 = pin()
+pin9.pinNumber = 9
+var pin10 = pin()
+pin10.pinNumber = 10
+//:#localized(key: "Chapter1Page1_Connection")
 //#-code-completion(everything, hide)
-dcMotor(pin6:/*#-editable-code velocity*/0/*#-end-editable-code*/, pin10:/*#-editable-code velocity*/0/*#-end-editable-code*/ )
-wait(/*#-editable-code duration*/0/*#-end-editable-code*/)
-stop()
+
+setValue(pinGiven: pin6, value: 100)
+

@@ -1,10 +1,10 @@
-/* 
-  Prose.strings
-  PlaygroundBook
-
-  Created by Burak Üstün on 14.05.2019.
-  
-*/
+/*
+ Prose.strings
+ PlaygroundBook
+ 
+ Created by Burak Üstün on 14.05.2019.
+ 
+ */
 
 
 /* An intro to loops. */
@@ -34,4 +34,27 @@ DC Motorları aracın hızını ve yönünü belirlemek için programlayacağız
 
 ### Programla
 Aracın 6 sn sola dönmesini ve durmasını istiyoruz.
+";
+
+/* Introduction */
+"Chapter1Page3_Week_1"="### Merhaba Twinner
+Seninle birlikte programlamayı öğrenerek çeşitli projeler yapacağız. Hadi başlayalım!
+";
+
+/* Week 1 */
+"Chapter1Page4_Week_2"="### Algoritmalar, Girdiler ve Çıktılar
+Kodlamaya başlamadan önce daha temelden öğrenmemiz lazım. Bu nedenle de başlayacağımız nokta algoritmalar. Algoritmalar, bilgisayarlara komut vermek için kulandığımız ifadelerdir. Bilgisayarın net bir şekilde bizi anlaması için gereken komutlardan oluşur.
+Bilgisayarlar ile iki şekilde etkileşiriz: girdiler ve çıktılar. Bilgisayarın aldığı verilere girdi, bilgisayardan çıkan verilere de çıktı deriz. Klavyeye basarak bilgisayara bir girdi verir, çıktı olarak ise ekranında ışık yanar. Girdisi butona basma, çıktısı ışık olan bir sistemi birlikte kuralım.
+Haydi sırasıyla Güç, Buton ve LED modüllerini bağla. Bu sistemin algoritması da: düğmeye basıldığında ışığı yak. Bu yapmış olduğun el fenerini artık karanlık yerleri aydınlatmak için kullanabilirsin.
+";
+
+/* Week 2*/
+"Chapter1Page5_Week_3"="### Kodlama
+Bir el feneri yapmak gayet kolaydı. Peki araba yapmak da o kadar kolay mı? Araba içinde farlar, ses sistemi ve klima gibi çalışan birçok sistem var. Daha da önemlisi arabanın ilerlemesi, dönmesi ve durması için motoru kontrol etmek de gerekiyor. Bu sefer el fenerindeki gibi sadece tek bir girdi ile arabayı çalıştırmak kolay olmayacak. Birçok girdiyi aynı anda almak ve arabanın bir tepki vermesi için bu girdileri işlemen gerecek. Şimdi yaratıcılığının sınırlanmadığı kodlamanın heyecanlı dünyasına giriyoruz!
+Twin kodlama setini getir ve işte arabamıza başlıyoruz. Öncelikle modeldeki gibi arabanın iskeleteni oluştur ve farları için kodlama modülünü arabanın üstüne yerleştir. Hangi farlar yansın ve hangi renk yansın? Tüm bunlara kendin karar verebilirsin. Aşağıdaki komutları incele ve istediğin değerleri gir.
+";
+
+"Chapter1Page6_Week_4"="### Veri Türleri
+Bilgisayarlar kullanıcıların sunduğu veriler ile çalışır. Farlı Araba\'yı yaparken girdiğin değerler, bilgisayarlar için sadece birer veriden ibarettir. Bu veri türleri arasında da \"string\" dediğimiz yazılar, \"integer\" dediğimiz tam sayılar ve \"float\" dediğimiz ondalıklı sayılar var. Ama biz Farlı Araba\'yı yaparken renk seçmiştik! Bilgisayarların gözleri olmadığı için seçtiğimiz rengi nasıl algılayabilir ki? Aslında bilgisayarlar, rengi renk olarak değil bu \"string\" denen yazılar olarak algılıyor aslında. Nasıl *insert yesil* gördüğümüzde yeşil dersek bilgisayarlar da *insert mavi* gördüğünde bunu mavi ile eşleştirmiş oluyor ve \"string\" verisini işlemeye başlıyor.
+Artık farklı veri türlerini kullanmaya hazırsın. El Sallayan Robot Minik, yeni insanlarla tanışmayı çok seviyor ve seni gördüğüne de çok mutlu olmuşa benziyor. Onun bu mutluluğunu yansıtması için sana selam verirken kendini tanıtmasını ve üzerindeki LED\'leri yakmasını sağla. Unutma, El Sallayan Robot Minik heyecanlandığında LED\'lerini hızlı hızlı yakıp söndürmek istiyor!
 ";

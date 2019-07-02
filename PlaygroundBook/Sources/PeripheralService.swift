@@ -35,6 +35,7 @@ class PeripheralService: NSObject {
   
   init(with peripheral: CBPeripheral, uuid: CBUUID, service: PlaygroundBluetoothService?) {
     super.init()
+    log("peripheral init")
     self.peripheral = peripheral
     self.service = service
     self.peripheral?.delegate = self
@@ -78,7 +79,8 @@ extension PeripheralService: CBPeripheralDelegate {
   func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
     guard let value = characteristic.value else { return }
     let array = [UInt8](value)
-    didUpdatedValue?(array)
+    NotificationCenter.default.post(name: .peripheralValueUpdate, object: nil, userInfo: ["value" : array])
+//    log(array.map({String($0)}).joined(separator: "-"))
   }
   
 }
@@ -104,4 +106,8 @@ extension PeripheralService {
     
   }
   
+}
+
+extension NSNotification.Name {
+   static let peripheralValueUpdate = Notification.Name("kPeripheralValueUpdate")
 }

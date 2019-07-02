@@ -3,12 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>Name</key>
-	<string>Bölüm 1</string>
+	<string>Chapter_1</string>
 	<key>Pages</key>
 	<array>
 		<string>intro.cutscenepage</string>
 		<string>IntroductionPage.playgroundpage</string>
 		<string>DCMotor.playgroundpage</string>
+		<string>Week_1.playgroundpage</string>
+		<string>Week_2.playgroundpage</string>
+		<string>Week_3.playgroundpage</string>
+		<string>Week_4.playgroundpage</string>
+		<string>Week_5.playgroundpage</string>
+		<string>Week_6.playgroundpage</string>
+		<string>Week_7.playgroundpage</string>
+		<string>Week_8.playgroundpage</string>
+		<string>Week_9.playgroundpage</string>
+		<string>Week_10.playgroundpage</string>
 	</array>
 </dict>
 </plist>

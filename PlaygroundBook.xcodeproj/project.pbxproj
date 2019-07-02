@@ -517,13 +517,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E086DC72051DD03004D8D25 /* BookOverridingBuildSettings.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = KMT33RPUAV;
 				GCC_DYNAMIC_NO_PIC = NO;
 				INSTALL_PATH = /;
 				PLAYGROUND_BOOK_FILE_NAME = "Twin Playgrounds";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PLAYGROUND_BOOK_CONTENT_IDENTIFIER)";
 				PRODUCT_NAME = "$(PLAYGROUND_BOOK_FILE_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
 			};
 			name = Debug;
@@ -532,12 +536,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E086DC72051DD03004D8D25 /* BookOverridingBuildSettings.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = KMT33RPUAV;
 				INSTALL_PATH = /;
 				PLAYGROUND_BOOK_FILE_NAME = "Twin Playgrounds";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PLAYGROUND_BOOK_CONTENT_IDENTIFIER)";
 				PRODUCT_NAME = "$(PLAYGROUND_BOOK_FILE_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
 			};
 			name = Release;

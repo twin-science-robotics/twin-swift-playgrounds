@@ -53,7 +53,6 @@ extension PlaygroundBluetoothService: PlaygroundBluetoothCentralManagerDelegate 
   func centralManager(_ centralManager: PlaygroundBluetoothCentralManager, didConnectTo peripheral: CBPeripheral) {
     currentPeripheral = peripheral
     peripheralService = PeripheralService(with: peripheral, uuid: positionCharUUID, service: self)
-    log("Connected")
     NotificationCenter.default.post(Notification(name: .twinConnected))
   }
 

@@ -9,19 +9,19 @@ import Foundation
 import UIKit
 import PlaygroundSupport
 
-//let debugLabel:UILabel = {
-//  let label = UILabel()
-//  label.numberOfLines = 0
-//  label.textAlignment = .center
-//  label.backgroundColor = UIColor(red:0.973, green:0.943, blue:0.879, alpha:1)
-//  label.textColor = UIColor(red:0.993, green:0.293, blue:0.147, alpha:1)
-//  label.layer.cornerRadius = 20
-//  label.clipsToBounds = true
-//  return label
-//}()
+let debugLabel:UILabel = {
+  let label = UILabel()
+  label.numberOfLines = 0
+  label.textAlignment = .center
+  label.backgroundColor = UIColor(red:0.973, green:0.943, blue:0.879, alpha:1)
+  label.textColor = UIColor(red:0.993, green:0.293, blue:0.147, alpha:1)
+  label.layer.cornerRadius = 20
+  label.clipsToBounds = true
+  return label
+}()
 
 func log(_ text: String) {
-//  debugLabel.text = text
+  debugLabel.text = text
 }
 
 class MainViewController: UIViewController {
@@ -34,6 +34,11 @@ class MainViewController: UIViewController {
       startAvoidingKeyboard()
     }
     configureViews()
+    NotificationCenter.default.addObserver(self, selector: #selector(peripheralDidUpdateValue(_:)), name: .peripheralValueUpdate, object: nil)
+  }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self, name: .peripheralValueUpdate, object: nil)
   }
   
 
@@ -52,27 +57,35 @@ class MainViewController: UIViewController {
     bluetoothView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
     bluetoothView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
     
-//    view.addSubview(debugLabel)
-//    if #available(iOS 11.0, *) {
-//      let guide = view.safeAreaLayoutGuide
-//      debugLabel.translatesAutoresizingMaskIntoConstraints = false
-//      debugLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
-//      debugLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20).isActive = true
-//      debugLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -100).isActive = true
-//      debugLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20).isActive = true
-//
-//    } else {
-//      debugLabel.translatesAutoresizingMaskIntoConstraints = false
-//      debugLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
-//      debugLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-//      debugLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
-//      debugLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-//    }
+    view.addSubview(debugLabel)
+    if #available(iOS 11.0, *) {
+      let guide = view.safeAreaLayoutGuide
+      debugLabel.translatesAutoresizingMaskIntoConstraints = false
+      debugLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
+      debugLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20).isActive = true
+      debugLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -100).isActive = true
+      debugLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20).isActive = true
+
+    } else {
+      debugLabel.translatesAutoresizingMaskIntoConstraints = false
+      debugLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
+      debugLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+      debugLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+      debugLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+    }
+  }
+  
+  
+  //cihazdan gelen
+  @objc func peripheralDidUpdateValue(_ notification: Notification) {
+    guard let response = notification.userInfo?["value"] as? [UInt8] else { return }
+    log(response.map({String($0)}).joined(separator: "-"))
   }
   
 }
 
 extension MainViewController: PlaygroundLiveViewMessageHandler {
+  //cihaza giden
   func receive(_ message: PlaygroundValue) {
     if case let .string(text) = message {
       guard let service = manager.peripheralService else {

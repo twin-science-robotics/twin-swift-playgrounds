@@ -36,9 +36,9 @@ func openLed(left: UIColor, middle: UIColor, right: UIColor) {
   }
   let message = "AA-44-1C-0D-09"
   let sendMessage = [message, first, second, third].joined(separator: "-")
+    
   send(sendMessage)
 }
-
 //#-end-hidden-code
 //:#localized(key: "Chapter1Page1_Connection")
 //#-code-completion(everything, hide)
